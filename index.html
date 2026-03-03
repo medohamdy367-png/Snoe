@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>S.N.W Koral</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
+
+body{
+    margin:0;
+    font-family:'Cairo',sans-serif;
+    background: linear-gradient(180deg,#02111d,#062f4f,#0a4b6e);
+    color:white;
+    text-align:center;
+}
+
+header{
+    padding:30px;
+    font-size:38px;
+    font-weight:bold;
+    background:linear-gradient(90deg,#00c3ff,#e0f7ff);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.section{
+    margin:25px auto;
+    width:90%;
+    max-width:700px;
+    background:rgba(255,255,255,0.08);
+    padding:20px;
+    border-radius:20px;
+    backdrop-filter:blur(12px);
+    box-shadow:0 0 25px rgba(0,195,255,0.3);
+}
+
+input{
+    width:90%;
+    padding:12px;
+    margin:10px;
+    border:none;
+    border-radius:10px;
+}
+
+button{
+    padding:12px 25px;
+    border:none;
+    border-radius:12px;
+    background:#00c3ff;
+    font-weight:bold;
+    cursor:pointer;
+    margin-top:10px;
+}
+
+button:hover{
+    background:white;
+}
+
+.rank-list{
+    text-align:right;
+    line-height:1.8;
+    font-size:15px;
+}
+
+.link-btn{
+    display:inline-block;
+    margin-top:10px;
+    padding:10px 20px;
+    background:#0088cc;
+    border-radius:10px;
+    text-decoration:none;
+    color:white;
+}
+
+.member{
+    background:rgba(0,0,0,0.4);
+    padding:10px;
+    margin:10px;
+    border-radius:10px;
+}
+
+.admin{display:none;}
+</style>
+</head>
+
+<body>
+
+<header>❄ S.N.W KORAL ❄</header>
+
+<div class="section">
+<h2>💌 أهلاً بك في نقابتنا</h2>
+<p>
+مرحباً بك في مملكة 𝙎𝙉𝙊𝙒 ❄  
+هنا القوة، الولاء، والرتب تُكتسب بالجدارة 👑  
+انضم إلينا واصنع اسمك بين الأساطير 🔥
+</p>
+</div>
+
+<div class="section">
+<h2>🌐 تسجيل عضو جديد</h2>
+<input type="text" id="name" placeholder="اسم العضو">
+<input type="text" id="rank" placeholder="الرتبة">
+<br>
+<button onclick="addMember()">تسجيل</button>
+</div>
+
+<div class="section">
+<button onclick="showAdmin()">دخول لوحة التحكم</button>
+</div>
+
+<div class="section admin" id="adminPanel">
+<h2>🛠 لوحة التحكم</h2>
+<div id="membersList"></div>
+<button onclick="clearMembers()">مسح الكل</button>
+</div>
+
+<div class="section rank-list">
+<h2>🏰 الرتب العليا لمملكة 𝙎𝙉𝙊𝙒 ❄</h2>
+
+✦ الامبراطور ⛓️ [ فـانـتـيـاس 🌹🌑 ]<br>
+✦ نائب الامبراطور ⛄ [ سكونا + هيناتـا ]<br>
+✦ المستشار 🌹 [ جان 🔥 ]<br>
+✦ اللورد 🌷 [ ]<br>
+✦ نائب اللورد ⚡ [ ]<br>
+<br>
+⌘ الملك 🔱 [ ]<br>
+⌘ نائب الملك ⚜️ [ ]<br>
+<br>
+⌘ الوزير 🔦 [ ]<br>
+⌘ نائب الوزير ⏱️ [ ]<br>
+<br>
+⌘ جنرال ⚙️ [ ]<br>
+⌘ نائب جنرال 🧭 [ ]<br>
+⌘ عميد 🕯 [ ]<br>
+⌘ تشيبوكاي 🧮 [ ]<br>
+⌘ ملازم ⚔️ [ ]<br>
+⌘ حامل بريق ✨ [ ]<br>
+⌘ حامل راية 🎀 [ ]<br>
+⌘ متدرب 🧸 [ ]<br>
+</div>
+
+<div class="section rank-list">
+<h2>⬆ قائمة الترقيات</h2>
+متدرب 🧸 ➜ حامل راية 🎀 ➜ حامل بريق ✨ ➜ ملازم ⚔️ ➜ تشيبوكاي 🧮 ➜ عميد 🕯 ➜ نائب جنرال 🧭 ➜ جنرال ⚙️ ➜ نائب وزير ⏱️ ➜ وزير 🔦 ➜ نائب ملك ⚜️ ➜ ملك 🔱 ➜ نائب الإمبراطور ⛄ ➜ الإمبراطور ⛓️
+</div>
+
+<div class="section rank-list">
+<h2>👑 ملوك الأسبوع</h2>
+ملك التفاعل 🔥 [ ]<br>
+ملك الفعاليات 🌨️ [ ]<br>
+ملك السوالف ☕ [ ]<br>
+العضو الذهبي 🍷 [ ]<br>
+المشرف الذهبي 🫧 [ ]<br>
+ملك النشر 🌙 [ ]<br>
+المشرف المتخاذل 💢 [ ]<br>
+</div>
+
+<div class="section">
+<h2>🔗 الروابط</h2>
+<a class="link-btn" href="https://chat.whatsapp.com/LqEuzfepPhu6JGaZx8Ab9u?mode=gi_t" target="_blank">
+رابط الإعلانات 🛡️
+</a>
+</div>
+
+<script>
+let password="1234";
+
+function addMember(){
+let name=document.getElementById("name").value;
+let rank=document.getElementById("rank").value;
+if(name==""||rank==""){alert("املأ البيانات");return;}
+let members=JSON.parse(localStorage.getItem("members"))||[];
+members.push({name,rank});
+localStorage.setItem("members",JSON.stringify(members));
+alert("تم التسجيل ❄");
+document.getElementById("name").value="";
+document.getElementById("rank").value="";
+}
+
+function showAdmin(){
+let pass=prompt("ادخل باسورد لوحة التحكم:");
+if(pass===password){
+document.getElementById("adminPanel").style.display="block";
+loadMembers();
+}else{alert("باسورد غلط");}
+}
+
+function loadMembers(){
+let members=JSON.parse(localStorage.getItem("members"))||[];
+let list=document.getElementById("membersList");
+list.innerHTML="";
+members.forEach(m=>{
+list.innerHTML+=`<div class="member">👤 ${m.name}<br>🎖 ${m.rank}</div>`;
+});
+}
+
+function clearMembers(){
+localStorage.removeItem("members");
+loadMembers();
+}
+</script>
+
+</body>
+</html>
